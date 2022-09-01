@@ -8,7 +8,17 @@ const data = {
 };
 
 const ListReducer = (state = data, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
+    case "TAMBAH":
+      const databaru = {
+        id: state.todo.length + 1,
+        title: payload,
+      };
+      return {
+        ...state,
+        todo: [...state.todo, databaru],
+      };
     default:
       return state;
   }
