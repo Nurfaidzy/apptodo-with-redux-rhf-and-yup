@@ -19,6 +19,11 @@ const ListReducer = (state = data, action) => {
         ...state,
         todo: [...state.todo, databaru],
       };
+    case "DELET":
+      return {
+        ...state,
+        todo: state.todo.filter((item) => item.id !== payload),
+      };
     default:
       return state;
   }

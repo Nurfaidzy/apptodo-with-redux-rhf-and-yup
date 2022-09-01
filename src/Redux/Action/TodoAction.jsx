@@ -4,3 +4,10 @@ export const add = (title) => {
     payload: title,
   };
 };
+
+export const del = (id) => {
+  return {
+    type: "DELET",
+    payload: id,
+  };
+};
